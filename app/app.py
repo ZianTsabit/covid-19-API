@@ -1,8 +1,12 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from google.cloud import bigquery
+
 
 
 app = FastAPI()
+client = bigquery.Client()
+
 
 @app.get("/")
 def read_root():
