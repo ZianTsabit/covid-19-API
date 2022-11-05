@@ -11,7 +11,7 @@ API to covid 19 data using big query
 
 # How to run
 
-first, you have to upload you google service account credentials json file in the app
+first, you have to upload your google service account credentials json file in the app
 directory.
 <br>
 <br>
