@@ -4,14 +4,18 @@ from google.cloud import bigquery
 from codecs import open
 import os
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "app\credentials.json"
-app = FastAPI()
-client = bigquery.Client()
+def authenticate(credentials_path):
+    # Authenticate to Google Cloud
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "app\\" + credentials_path
+    client = bigquery.Client()
+    return client
 
+app = FastAPI()
+client = authenticate("credentials.json")
 
 @app.get("/")
 def read_root():
-    return {"message": "Hello World !"}
+    return {"message": "Hello, this is ghazian submission for the Data Engineer Internship at Merkle"}
 
 @app.get("/api/bq_v1/answer_sql1")
 def answer_sql1():
