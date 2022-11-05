@@ -1,1 +1,1 @@
-SELECT SUM(cumulative_persons_vaccinated) AS cumulative_persons_vaccinated FROM `bigquery-public-data.covid19_open_data.covid19_open_data` WHERE country_code = 'ID' AND date = '2022-06-01';
+SELECT cumulative_persons_vaccinated FROM `bigquery-public-data.covid19_open_data.covid19_open_data` WHERE country_code = 'ID' AND date = '2022-06-01' AND cumulative_persons_vaccinated IS NOT NULL LIMIT 1;
